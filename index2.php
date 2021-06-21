@@ -17,11 +17,7 @@
 				}else{
 					echo "<h2>welcome</h2><div>Hello php</div>";
 				}
-
-
 			?>
-
-
 		</ul>
 		<?php echo 'can\'t' ?>
 	</h2>

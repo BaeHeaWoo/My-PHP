@@ -11,7 +11,9 @@
 
 		$name = "hi";
 		echo "<br>hello mr yesterday ".$name ." hello mr yesterday hello mr yesterday
-		hello mr yesterday hello mr yesterday hello world ".$name." yesterday hi"; //번거로움이 없다
+		hello mr yesterday hello mr yesterday hello world ".$name." yesterday hi"; //번거로움이 없다.
+
+		
 	?>
 </body>
 </html>

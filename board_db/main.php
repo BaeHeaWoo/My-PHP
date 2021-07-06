@@ -18,6 +18,8 @@
 	);
 
 	$update_link ='';
+	$delete_link = '';
+
 
 	if(isset($_GET[id])){
 		//mysqli_real_escape_string(); 보안용 코드로 사용자가 입력하는 코드가 만약 sql문이면 그걸 text로 변경 한다 
@@ -26,6 +28,10 @@
 		$res = mysqli_query($mysqli, $sql);
 		$content = mysqli_fetch_array($res);
 		$update_link = "<p><a href='update.php?id=".$_GET['id']."'>update</a></p>";
+		$delete_link = '<form action="delete_ok.php" method="post">
+						<input type="hidden" name="id" value='.$_GET["id"].'>
+						<input type="submit" value="delete">
+					</form>';
 	}
 
 	
@@ -46,6 +52,7 @@
 	<?= $content['description'] ?>
 	<p><a href="create.php">create</a></p>
 	<?= $update_link ?>
+	<?= $delete_link?>
 	
 
 </body>

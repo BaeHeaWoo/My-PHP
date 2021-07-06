@@ -13,5 +13,4 @@
 	}else{
 		echo '성공했습니다 <a href="main.php">돌아가기</a>';
 	}
-
 ?>

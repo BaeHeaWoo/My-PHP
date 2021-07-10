@@ -44,6 +44,7 @@
 </head>
 <body>
 	<h2><a href='main.php'>main page</a></h2>
+	<p><a href="author.php">author</a></p>
 	<ol>
 		<?= $list; ?>
 	</ol>

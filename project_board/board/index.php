@@ -21,7 +21,7 @@
 		</tr>	
 		<?php while($row = mysqli_fetch_array($res)){ ?>	
 		<tr>
-			<td><?= $row['id'] ?></td>
+			<td><a href="view.php?id=<?= $row['id'] ?>"><?= $row['id'] ?></a></td>
 			<td><?= $row['title'] ?></td>
 			<td><?= $row['date_wrap'] ?></td>
 		</tr>

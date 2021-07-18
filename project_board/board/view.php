@@ -20,10 +20,13 @@
 <body>
 	<input type="text" name="title" value=<?= $row['title'] ?>>
 	<textarea name="contents"><?= $row['contents'] ?></textarea>
-	<button class="btn_update">수정하기</button>
+	<button class="Interaction" data-type="update">수정하기</button>
+	<button class="Interaction" data-type="delete">삭제하기</button>
 	<script>
 
 		console.log("start");
+
+		const url_box = ['update/update_ok.php', 'delete/delete_ok.php'];
 
 		function numberDate(){
 			var url = location.search;
@@ -44,14 +47,19 @@
 			}
 		}
 
-		$('.btn_update').click(function(){
+		$('.Interaction').click(function(){
+
+			let url = $(this).data('type') == 'delete' ? 'delete/delete_ok.php' : 'update/update_ok.php';
+
 			$.ajax({
-			    url: 'update/update_ok.php',
+			    url: url,
 			    type: 'POST',   
 			    data: readData(),
 			    success: function(xhr) {
 			        if(xhr === "success"){
 			        	history.go(0);
+			        }else{
+			        	location.replace('./index.php');
 			        }
 			    },
 			    error: function(xhr, status, errorThrow) {
